@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -46,6 +46,74 @@
     border-left:4px solid var(--accent); color:#333; border-radius:4px;
   }
   .disclaimer{ color:var(--muted); font-size:.95rem; font-style:italic; border-top:1px solid var(--line); padding-top:1em; margin-top:2em; }
+  .media-block{
+    display:grid;
+    gap:1rem;
+    margin:1.25em 0 1.5em;
+    padding:14px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:linear-gradient(180deg,#fff,#fafbfc);
+    box-shadow:0 8px 24px rgba(0,0,0,.05);
+  }
+  .media-figure{ margin:0; }
+  .media-figure img,
+  .media-figure video{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:12px;
+    background:#000;
+  }
+  .media-figure img{
+    max-width:360px;
+    margin:0 auto;
+  }
+  .media-figure audio{
+    display:block;
+    width:100%;
+    margin-top:.5rem;
+  }
+  .media-title{
+    margin:.75rem 0 .15rem;
+    font-size:1rem;
+    font-weight:700;
+  }
+  .media-note{
+    margin:0;
+    color:var(--muted);
+    font-size:.94rem;
+  }
+  .media-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:.75rem;
+  }
+  .download-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:0 14px;
+    border:1.5px solid var(--accent);
+    border-radius:999px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font-size:.95rem;
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .download-btn:hover{ filter:brightness(1.05); }
+  .download-btn:focus-visible{ outline:3px solid #ffbf47; outline-offset:2px; }
+  .booking-source-logo{
+    display:block;
+    width:220px;
+    max-width:100%;
+    height:auto;
+    margin:0 auto .75rem;
+  }
 
   /* Language toggle */
   .langbar{
@@ -98,6 +166,35 @@
       <p class="updated"><strong>Last updated: June 22, 2026</strong></p>
     </header>
 
+    <div class="media-block" aria-label="Media for the English section">
+      <figure class="media-figure">
+        <img src="assets/english-warning.png" width="350" height="350" loading="eager" alt="Portrait with the word Fraud">
+        <figcaption>
+          <p class="media-title">English image</p>
+          <p class="media-note">Use this image in the English section.</p>
+          <div class="media-actions">
+            <a class="download-btn" href="assets/english-warning.png" download="English.png">Download image</a>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="media-figure">
+        <audio controls preload="metadata" aria-label="Audio for the English section" src="assets/gerlis-kitchen-private-chef-scam.m4a"></audio>
+        <figcaption>
+          <p class="media-title">Audio</p>
+          <p class="media-note">Audio file for the page.</p>
+          <div class="media-actions">
+            <a class="download-btn" href="assets/gerlis-kitchen-private-chef-scam.m4a" download="The_Gerli_s_Kitchen_private_chef_scam.m4a">Download audio</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <blockquote class="booking-source">
+      <img class="booking-source-logo" src="assets/takeachef.jpg" width="900" height="900" loading="eager" alt="Take a Chef logo">
+      <strong>Booking source:</strong> We found this chef through <a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita">Take a Chef</a>.
+    </blockquote>
+
     <p class="lead">This page is a factual, first-person account of our own experience hiring the private chef service operating as <strong>"Gerli's Kitchen"</strong> (Chef <strong>Gerson Matarrita Obando</strong>) in the Guanacaste region of Costa Rica, together with a publicly posted third-party report that closely matches our experience.</p>
 
     <p>We are publishing this so other travelers can make an informed decision. Everything below is either (a) our own direct experience, (b) information the business publishes about itself, or (c) clearly attributed public reports by others. We have retained documentation (contract, messages, and payment records). <strong>If this matter is resolved, we will update or remove this page.</strong></p>
@@ -142,6 +239,20 @@
       <li>We are currently seeking completion of the remaining service or a refund of the undelivered portion. This page documents the situation as it stands.</li>
     </ol>
     <p><em>(We will add dated, screenshot-backed detail here as the situation develops.)</em></p>
+
+    <h2>Video evidence</h2>
+    <div class="media-block" aria-label="Video evidence for the English section">
+      <figure class="media-figure">
+        <video controls preload="metadata" aria-label="Video for the English section" src="assets/gerlis-kitchen-warning.mp4"></video>
+        <figcaption>
+          <p class="media-title">Video</p>
+          <p class="media-note">Video file for the page.</p>
+          <div class="media-actions">
+            <a class="download-btn" href="assets/gerlis-kitchen-warning.mp4" download="Gerli_s_Kitchen_Warning.mp4">Download video</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
 
     <h2>A near-identical public report</h2>
     <p>On <strong>January 8, 2026</strong>, a traveler posted a detailed public warning on Reddit (r/CostaRicaTravel) about the same business, describing an experience with a strikingly similar shape. In their own account:</p>
@@ -195,6 +306,34 @@
       <p class="updated"><strong>Última actualización: 22 de junio de 2026</strong></p>
     </header>
 
+    <div class="media-block" aria-label="Media for the Spanish section">
+      <figure class="media-figure">
+        <img src="assets/spanish-warning.png" width="350" height="350" loading="eager" alt="Portrait with the word Fraude">
+        <figcaption>
+          <p class="media-title">Imagen en espanol</p>
+          <p class="media-note">Use esta imagen en la seccion en espanol.</p>
+          <div class="media-actions">
+            <a class="download-btn" href="assets/spanish-warning.png" download="Spanish.png">Descargar imagen</a>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="media-figure">
+        <audio controls preload="metadata" aria-label="Audio para la seccion en espanol" src="assets/gerlis-kitchen-private-chef-scam.m4a"></audio>
+        <figcaption>
+          <p class="media-title">Audio</p>
+          <p class="media-note">Archivo de audio para la pagina.</p>
+          <div class="media-actions">
+            <a class="download-btn" href="assets/gerlis-kitchen-private-chef-scam.m4a" download="The_Gerli_s_Kitchen_private_chef_scam.m4a">Descargar audio</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <blockquote class="booking-source">
+      <img class="booking-source-logo" src="assets/takeachef.jpg" width="900" height="900" loading="eager" alt="Take a Chef logo">
+      <strong>Fuente de reserva:</strong> Encontramos a este chef a traves de <a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita">Take a Chef</a>.
+    </blockquote>
     <p class="lead">Esta página es un relato factual y en primera persona de nuestra propia experiencia al contratar el servicio de chef privado que opera como <strong>"Gerli's Kitchen"</strong> (chef <strong>Gerson Matarrita Obando</strong>) en la región de Guanacaste, Costa Rica, junto con un informe público de un tercero que coincide estrechamente con nuestra experiencia.</p>
 
     <p>Publicamos esto para que otros viajeros puedan tomar una decisión informada. Todo lo que aparece a continuación es (a) nuestra propia experiencia directa, (b) información que el negocio publica sobre sí mismo, o (c) informes públicos de otras personas, claramente atribuidos. Hemos conservado la documentación (contrato, mensajes y comprobantes de pago). <strong>Si este asunto se resuelve, actualizaremos o eliminaremos esta página.</strong></p>
@@ -240,6 +379,19 @@
     </ol>
     <p><em>(Agregaremos detalles fechados y respaldados con capturas de pantalla a medida que evolucione la situación.)</em></p>
 
+    <h2>Video</h2>
+    <div class="media-block" aria-label="Video para la seccion en espanol">
+      <figure class="media-figure">
+        <video controls preload="metadata" aria-label="Video para la seccion en espanol" src="assets/gerlis-kitchen-warning.mp4"></video>
+        <figcaption>
+          <p class="media-title">Video</p>
+          <p class="media-note">Archivo de video para la pagina.</p>
+          <div class="media-actions">
+            <a class="download-btn" href="assets/gerlis-kitchen-warning.mp4" download="Gerli_s_Kitchen_Warning.mp4">Descargar video</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
     <h2>Un informe público casi idéntico</h2>
     <p>El <strong>8 de enero de 2026</strong>, un viajero publicó una advertencia pública detallada en Reddit (r/CostaRicaTravel) sobre el mismo negocio, describiendo una experiencia con una forma sorprendentemente similar. Según su propio relato:</p>
     <ul>
