@@ -31,10 +31,18 @@ We are requesting either completion of the remaining meals we paid for, or a ref
 - **Business name:** Gerli's Kitchen (the name combines the chef and his partner)
 - **Chef:** Gerson Matarrita Obando
 - **Service area:** Guanacaste, Costa Rica - including Playas del Coco, Tamarindo, Las Catalinas, Papagayo, Playa Hermosa, and Santa Cruz
-- **Website:** gerliskitchen.com
-- **Instagram:** @gerliskitchen
-- **Booking profiles:** Take a Chef (Gerson Matarrita Obando) and miummium.com
 - **Typical booking process (per the business's own website):** initial contact by WhatsApp or email, a custom menu, then "a formal agreement (contract and security deposit)."
+
+### The business's own public listings
+
+These are the public, commercial profiles the business uses to advertise and take bookings:
+
+- **Website:** [gerliskitchen.com](https://gerliskitchen.com/)
+- **Instagram (business):** [@gerliskitchen](https://www.instagram.com/gerliskitchen/)
+- **Take a Chef profile:** [Gerson Matarrita Obando](https://www.takeachef.com/en-cr/chef/gerson-matarrita)
+- **miummium listing:** [Chef #50091](https://www.miummium.com/es-cr/chef-a-domicilio/gerson-50091)
+
+If you are considering booking this service, we encourage you to read this account and the public report below first.
 
 To be clear and fair: this chef has a large number of positive public reviews and is, by many accounts, a skilled cook. That is part of why our experience was so unexpected.
 
@@ -65,7 +73,7 @@ On **January 8, 2026**, a traveler posted a detailed public warning on Reddit (r
 - He offered to reschedule or refund, then **stopped responding.** Promised refund dates passed with no payment.
 - They reported being **blocked** on WhatsApp and Instagram, and that their **negative reviews were repeatedly removed** from Google.
 
-Source: Reddit, r/CostaRicaTravel, "Warning about 'Gerlis Kitchen' private chef scam in Costa Rica" (posted January 8, 2026). Other commenters there referenced additional "ripoff / no-show" reports.
+Source: [Reddit, r/CostaRicaTravel, "Warning about 'Gerlis Kitchen' private chef scam in Costa Rica"](https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/) (posted January 8, 2026). Other commenters there referenced additional "ripoff / no-show" reports.
 
 We are linking this not as proof of anything about our own case, but because the pattern - large payment collected early, a few meals delivered, an "accident," and then difficulty obtaining a refund - is the same shape we experienced.
 
