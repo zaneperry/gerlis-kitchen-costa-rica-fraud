@@ -1,7 +1,7 @@
 # Spec: Gerli's Kitchen media embeds
 
 ## Objective
-Add the provided English and Spanish warning images to the top of the matching language sections on the GitHub Pages page, and add the provided audio and video files as clean embeds with download buttons. The English image belongs in the English section; the Spanish image belongs in the Spanish section.
+Add the provided English and Spanish warning images to the top of the matching language sections on the GitHub Pages page, and add the provided audio and video files as clean embeds. The English image belongs in the English section; the Spanish image belongs in the Spanish section. The Take a Chef logo should appear in the top media area as the booking source reference, with factual language only.
 
 ## Tech Stack
 - Static HTML served by GitHub Pages
@@ -25,20 +25,20 @@ Add the provided English and Spanish warning images to the top of the matching l
 
 ## Testing Strategy
 - Open the page locally in a browser
-- Confirm English shows the English image at the top
-- Confirm Spanish shows the Spanish image at the top
+- Confirm English shows the English image and Take a Chef logo at the top
+- Confirm Spanish shows the Spanish image and Take a Chef logo at the top
 - Confirm the audio player and video player load from local assets
-- Confirm download links resolve to the local asset files
+- Confirm the video still has a download link
 
 ## Boundaries
-- Always: keep both language versions visually aligned, use local asset paths, and preserve the current language toggle behavior
+- Always: keep both language versions visually aligned, use local asset paths, preserve the current language toggle behavior, and keep Take a Chef references factual
 - Ask first: changing the page copy, adding new dependencies, or altering the GitHub Pages deployment setup
 - Never: hotlink the new media, break the language toggle, or remove the existing warning content
 
 ## Success Criteria
-- English section shows the English image at the top
-- Spanish section shows the Spanish image at the top
-- Both sections include the same audio embed near the top with a download button
+- English section shows the English image and Take a Chef logo at the top
+- Spanish section shows the Spanish image and Take a Chef logo at the top
+- Both sections include the same audio embed near the top without a download button
 - Both sections include the same video embed around the middle of the page with a download button
 - All media loads from committed local files in `assets/`
 - The page still toggles cleanly between languages

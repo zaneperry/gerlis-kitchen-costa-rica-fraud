@@ -107,12 +107,48 @@
   }
   .download-btn:hover{ filter:brightness(1.05); }
   .download-btn:focus-visible{ outline:3px solid #ffbf47; outline-offset:2px; }
+  .top-media{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(180px,220px);
+    gap:12px;
+    align-items:center;
+    margin:0 0 .9rem;
+  }
+  .top-media img{
+    display:block;
+    max-width:100%;
+    height:auto;
+    justify-self:center;
+  }
+  .warning-image{
+    width:min(350px,100%);
+    border-radius:12px;
+  }
   .booking-source-logo{
     display:block;
     width:220px;
     max-width:100%;
     height:auto;
-    margin:0 auto .75rem;
+    margin:0 auto;
+  }
+  .audio-line{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin:1rem 0 1.1rem;
+  }
+  .audio-line audio{
+    flex:1 1 auto;
+    min-width:0;
+  }
+  .audio-disc{
+    flex:0 0 auto;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:radial-gradient(circle at 36% 36%, #ffffff 0 8%, #d9d9d9 9% 18%, #6b6b6b 19% 36%, #2b2b2b 37% 100%);
+    border:1px solid #666;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
   }
 
   /* Language toggle */
@@ -141,6 +177,7 @@
     body{ font-size:16px; }
     h1{ font-size:1.55rem; }
     .langbar .label{ display:none; }
+    .top-media{ grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -162,40 +199,20 @@
   <!-- ====================== ENGLISH ====================== -->
   <section id="content-en" lang="en">
     <header class="top">
+      <div class="top-media" aria-label="Top media for the English section">
+        <img class="booking-source-logo" src="assets/takeachef.jpg" width="900" height="900" loading="eager" alt="Take a Chef logo">
+        <img class="warning-image" src="assets/english-warning.png" width="350" height="350" loading="eager" alt="Portrait with the word Fraud">
+      </div>
       <h1>A Documented Warning: Our Experience with "Gerli's Kitchen" Private Chef, Guanacaste, Costa Rica</h1>
       <p class="updated"><strong>Last updated: June 22, 2026</strong></p>
     </header>
 
-    <div class="media-block" aria-label="Media for the English section">
-      <figure class="media-figure">
-        <img src="assets/english-warning.png" width="350" height="350" loading="eager" alt="Portrait with the word Fraud">
-        <figcaption>
-          <p class="media-title">English image</p>
-          <p class="media-note">Use this image in the English section.</p>
-          <div class="media-actions">
-            <a class="download-btn" href="assets/english-warning.png" download="English.png">Download image</a>
-          </div>
-        </figcaption>
-      </figure>
-
-      <figure class="media-figure">
-        <audio controls preload="metadata" aria-label="Audio for the English section" src="assets/gerlis-kitchen-private-chef-scam.m4a"></audio>
-        <figcaption>
-          <p class="media-title">Audio</p>
-          <p class="media-note">Audio file for the page.</p>
-          <div class="media-actions">
-            <a class="download-btn" href="assets/gerlis-kitchen-private-chef-scam.m4a" download="The_Gerli_s_Kitchen_private_chef_scam.m4a">Download audio</a>
-          </div>
-        </figcaption>
-      </figure>
+    <div class="audio-line" aria-label="Audio for the English section">
+      <audio controls preload="metadata" aria-label="English audio for the page" src="assets/gerlis-kitchen-private-chef-scam.m4a"></audio>
+      <span class="audio-disc" aria-hidden="true"></span>
     </div>
 
-    <blockquote class="booking-source">
-      <img class="booking-source-logo" src="assets/takeachef.jpg" width="900" height="900" loading="eager" alt="Take a Chef logo">
-      <strong>Booking source:</strong> We found this chef through <a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita">Take a Chef</a>.
-    </blockquote>
-
-    <p class="lead">This page is a factual, first-person account of our own experience hiring the private chef service operating as <strong>"Gerli's Kitchen"</strong> (Chef <strong>Gerson Matarrita Obando</strong>) in the Guanacaste region of Costa Rica, together with a publicly posted third-party report that closely matches our experience.</p>
+    <p class="lead">This page is a factual, first-person account of our own experience hiring the private chef service operating as <strong>"Gerli's Kitchen"</strong> (Chef <strong>Gerson Matarrita Obando</strong>) in the Guanacaste region of Costa Rica. We first found the booking through a <a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita">Take a Chef</a> profile, and we are also including a publicly posted third-party report that closely matches our experience. We think it is inappropriate for a legitimate marketplace to refer customers to a booking that ends in undelivered meals and an unresolved refund dispute, and we are asking Take a Chef to review the profile and remove it if it does not meet their standards.</p>
 
     <p>We are publishing this so other travelers can make an informed decision. Everything below is either (a) our own direct experience, (b) information the business publishes about itself, or (c) clearly attributed public reports by others. We have retained documentation (contract, messages, and payment records). <strong>If this matter is resolved, we will update or remove this page.</strong></p>
 
@@ -216,6 +233,7 @@
     <ul>
       <li><strong>Business name:</strong> Gerli's Kitchen (the name combines the chef and his partner)</li>
       <li><strong>Chef:</strong> Gerson Matarrita Obando</li>
+      <li><strong>Booking source:</strong> Take a Chef, the referral marketplace that led us to the booking</li>
       <li><strong>Service area:</strong> Guanacaste, Costa Rica - including Playas del Coco, Tamarindo, Las Catalinas, Papagayo, Playa Hermosa, and Santa Cruz</li>
       <li><strong>Typical booking process (per the business's own website):</strong> initial contact by WhatsApp or email, a custom menu, then "a formal agreement (contract and security deposit)."</li>
     </ul>
@@ -302,39 +320,19 @@
   <!-- ====================== ESPAÑOL ====================== -->
   <section id="content-es" lang="es" hidden>
     <header class="top">
+      <div class="top-media" aria-label="Media superior para la seccion en espanol">
+        <img class="booking-source-logo" src="assets/takeachef.jpg" width="900" height="900" loading="eager" alt="Logotipo de Take a Chef">
+        <img class="warning-image" src="assets/spanish-warning.png" width="350" height="350" loading="eager" alt="Portrait with the word Fraude">
+      </div>
       <h1>Una advertencia documentada: nuestra experiencia con el chef privado "Gerli's Kitchen", Guanacaste, Costa Rica</h1>
       <p class="updated"><strong>Última actualización: 22 de junio de 2026</strong></p>
     </header>
 
-    <div class="media-block" aria-label="Media for the Spanish section">
-      <figure class="media-figure">
-        <img src="assets/spanish-warning.png" width="350" height="350" loading="eager" alt="Portrait with the word Fraude">
-        <figcaption>
-          <p class="media-title">Imagen en espanol</p>
-          <p class="media-note">Use esta imagen en la seccion en espanol.</p>
-          <div class="media-actions">
-            <a class="download-btn" href="assets/spanish-warning.png" download="Spanish.png">Descargar imagen</a>
-          </div>
-        </figcaption>
-      </figure>
-
-      <figure class="media-figure">
-        <audio controls preload="metadata" aria-label="Audio para la seccion en espanol" src="assets/gerlis-kitchen-private-chef-scam.m4a"></audio>
-        <figcaption>
-          <p class="media-title">Audio</p>
-          <p class="media-note">Archivo de audio para la pagina.</p>
-          <div class="media-actions">
-            <a class="download-btn" href="assets/gerlis-kitchen-private-chef-scam.m4a" download="The_Gerli_s_Kitchen_private_chef_scam.m4a">Descargar audio</a>
-          </div>
-        </figcaption>
-      </figure>
+    <div class="audio-line" aria-label="Audio para la seccion en espanol">
+      <audio controls preload="metadata" aria-label="Audio en espanol para la pagina" src="assets/gerlis-kitchen-private-chef-scam.m4a"></audio>
+      <span class="audio-disc" aria-hidden="true"></span>
     </div>
-
-    <blockquote class="booking-source">
-      <img class="booking-source-logo" src="assets/takeachef.jpg" width="900" height="900" loading="eager" alt="Take a Chef logo">
-      <strong>Fuente de reserva:</strong> Encontramos a este chef a traves de <a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita">Take a Chef</a>.
-    </blockquote>
-    <p class="lead">Esta página es un relato factual y en primera persona de nuestra propia experiencia al contratar el servicio de chef privado que opera como <strong>"Gerli's Kitchen"</strong> (chef <strong>Gerson Matarrita Obando</strong>) en la región de Guanacaste, Costa Rica, junto con un informe público de un tercero que coincide estrechamente con nuestra experiencia.</p>
+    <p class="lead">Esta página es un relato factual y en primera persona de nuestra propia experiencia al contratar el servicio de chef privado que opera como <strong>"Gerli's Kitchen"</strong> (chef <strong>Gerson Matarrita Obando</strong>) en la región de Guanacaste, Costa Rica. Encontramos la reserva a través de un perfil de <a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita">Take a Chef</a>, y también incluimos un informe público de un tercero que coincide estrechamente con nuestra experiencia. Nos parece inapropiado que un mercado legítimo refiera a clientes a una reserva que termina en comidas no entregadas y una disputa de reembolso sin resolver, y pedimos a Take a Chef que revise el perfil y lo retire si no cumple sus estándares.</p>
 
     <p>Publicamos esto para que otros viajeros puedan tomar una decisión informada. Todo lo que aparece a continuación es (a) nuestra propia experiencia directa, (b) información que el negocio publica sobre sí mismo, o (c) informes públicos de otras personas, claramente atribuidos. Hemos conservado la documentación (contrato, mensajes y comprobantes de pago). <strong>Si este asunto se resuelve, actualizaremos o eliminaremos esta página.</strong></p>
 
@@ -355,6 +353,7 @@
     <ul>
       <li><strong>Nombre del negocio:</strong> Gerli's Kitchen (el nombre combina al chef y a su pareja)</li>
       <li><strong>Chef:</strong> Gerson Matarrita Obando</li>
+      <li><strong>Fuente de reserva:</strong> Take a Chef, el mercado de referencia que nos llevó a la reserva</li>
       <li><strong>Zona de servicio:</strong> Guanacaste, Costa Rica - incluyendo Playas del Coco, Tamarindo, Las Catalinas, Papagayo, Playa Hermosa y Santa Cruz</li>
       <li><strong>Proceso de reserva habitual (según el propio sitio web del negocio):</strong> contacto inicial por WhatsApp o correo electrónico, un menú personalizado y luego "un acuerdo formal (contrato y depósito de garantía)."</li>
     </ul>
