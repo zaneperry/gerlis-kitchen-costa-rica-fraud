@@ -25,6 +25,50 @@
     font-size:17px;
     line-height:1.65;
   }
+  .password-gate{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    padding:24px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(31,78,121,.14), transparent 34rem),
+      linear-gradient(145deg,#f4f7f9,#ffffff 55%,#eef2f4);
+  }
+  .password-card{
+    width:min(100%,420px);
+    padding:32px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:rgba(255,255,255,.96);
+    box-shadow:0 20px 60px rgba(20,38,52,.14);
+  }
+  .password-card h1{ margin:0 0 .35rem; }
+  .password-card p{ margin:.35rem 0 1.2rem; color:var(--muted); }
+  .password-card label{ display:block; margin-bottom:.35rem; font-weight:700; }
+  .password-row{ display:flex; gap:8px; }
+  .password-row input{
+    min-width:0;
+    flex:1 1 auto;
+    min-height:46px;
+    padding:8px 12px;
+    border:1.5px solid #9aa5ad;
+    border-radius:8px;
+    font:inherit;
+  }
+  .password-row button{
+    min-height:46px;
+    padding:8px 18px;
+    border:0;
+    border-radius:8px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font:inherit;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .password-row input:focus-visible,
+  .password-row button:focus-visible{ outline:3px solid #ffbf47; outline-offset:2px; }
+  .password-error{ min-height:1.6em; margin:.6rem 0 0 !important; color:#9b1c1c !important; font-weight:700; }
   .wrap{ max-width:800px; margin:0 auto; padding:0 20px 80px; }
   header.top{
     border-bottom:3px solid var(--accent);
@@ -178,11 +222,29 @@
     h1{ font-size:1.55rem; }
     .langbar .label{ display:none; }
     .top-media{ grid-template-columns:1fr; }
+    .password-card{ padding:24px; }
+    .password-row{ align-items:stretch; flex-direction:column; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
+<main id="password-gate" class="password-gate">
+  <section class="password-card" aria-labelledby="password-title">
+    <h1 id="password-title">Private page</h1>
+    <p>Enter the password to view this page.</p>
+    <form id="password-form">
+      <label for="password-input">Password</label>
+      <div class="password-row">
+        <input id="password-input" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">Enter</button>
+      </div>
+      <p id="password-error" class="password-error" aria-live="polite"></p>
+    </form>
+    <noscript><p>JavaScript is required to unlock this page.</p></noscript>
+  </section>
+</main>
+
+<div id="site-content" class="wrap" hidden inert aria-hidden="true" tabindex="-1">
 
   <nav class="langbar" aria-label="Language selector">
     <span class="label">Language / Idioma</span>
@@ -439,6 +501,49 @@
 </div>
 
 <script>
+  var PASSWORD_PROTECTION_ENABLED = true;
+
+  function showSiteContent(){
+    var gate = document.getElementById('password-gate');
+    var content = document.getElementById('site-content');
+    gate.hidden = true;
+    content.hidden = false;
+    content.inert = false;
+    content.removeAttribute('aria-hidden');
+    content.focus();
+  }
+
+  function initializePasswordGate(){
+    if (!PASSWORD_PROTECTION_ENABLED){
+      showSiteContent();
+      return;
+    }
+
+    var isUnlocked = false;
+    try { isUnlocked = sessionStorage.getItem('gk-unlocked') === 'true'; } catch (e) {}
+    if (isUnlocked){
+      showSiteContent();
+      return;
+    }
+
+    var form = document.getElementById('password-form');
+    var input = document.getElementById('password-input');
+    var error = document.getElementById('password-error');
+    form.addEventListener('submit', function(event){
+      event.preventDefault();
+      var enteredPassword = input.value;
+      if (enteredPassword === 'fuckgerli'){
+        try { sessionStorage.setItem('gk-unlocked', 'true'); } catch (e) {}
+        showSiteContent();
+        return;
+      }
+      error.textContent = 'Incorrect password. Please try again.';
+      input.value = '';
+      input.focus();
+    });
+    input.focus();
+  }
+
   function setLang(lang){
     var en = document.getElementById('content-en');
     var es = document.getElementById('content-es');
@@ -456,6 +561,7 @@
     var saved = 'en';
     try { saved = localStorage.getItem('gk-lang') || 'en'; } catch (e) {}
     setLang(saved);
+    initializePasswordGate();
   })();
 </script>
 </body>
